@@ -1,0 +1,33 @@
+h1{
+    text-align: center;
+    
+}
+
+.body{
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: center;
+   align-items: center;
+}
+
+.sidebar{
+    display: flex;
+    flex-flow: column wrap;
+    gap: 30px;
+}
+
+.container{
+    border: 3px solid black;
+    width: 500px;
+    height: 500px;
+    margin: 50px;
+}
+
+button{
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    background-color: #f2f2f2;
+
+}
