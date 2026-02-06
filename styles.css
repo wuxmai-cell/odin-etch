@@ -21,6 +21,8 @@ h1{
     width: 500px;
     height: 500px;
     margin: 50px;
+    display: flex;
+    flex-flow: row wrap;
 }
 
 button{
