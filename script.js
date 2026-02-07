@@ -1,8 +1,10 @@
 const container = document.querySelector(".container");
 const sidebar = document.querySelector(".sidebar");
+const dimension = document.querySelector("#change");
 const width = 500;
 var color = true;
 var rainbow = false;
+var d = 32;
 
 
 function createGrid(num){
@@ -15,6 +17,7 @@ function createGrid(num){
         container.appendChild(box);
     }
 }
+createGrid(32);
 
 sidebar.addEventListener('click', function(e){
     let target = e.target;
@@ -22,15 +25,19 @@ sidebar.addEventListener('click', function(e){
         case 'color':
             color = true;
             rainbow = false;
-            console.log('color was clicked');
+            console.log('color was clicked'+color+rainbow);
+            console.log(target);
+            break;
         case 'rainbow':
             color = false;
             rainbow = true;
+            console.log('rainbow was clicked'+color+rainbow);
+            break;
         case 'reset':
             container.replaceChildren();
-            createGrid(32);
-            color = true;
-            rainbow = false;
+            console.log(d);
+            createGrid(d);
+            break;
     }
 });
 
@@ -48,6 +55,12 @@ container.addEventListener('mouseover', function(e){
     }
 });
 
+dimension.addEventListener('keydown', function(e){
+    const dim = dimension.value;
+    if(e.key === 'Enter'){
+        d = dim;
+        container.replaceChildren();
+        createGrid(dim);
+    }
+});
 
-
-createGrid(32);
